@@ -1,7 +1,5 @@
 import os
 
-from flask_cors import CORS
-
 from src.db_models import *
 from src.job import start_job
 

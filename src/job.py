@@ -8,7 +8,7 @@ from src.parser import Parser
 parser = Parser()
 
 
-schedule.every(1).hours.do(parser.execute)
+schedule.every(1).minutes.do(parser.execute)
 
 
 def scheduled_job():
