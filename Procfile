@@ -1,2 +1,3 @@
-release: chmod u+x start.sh && ./start.sh
-web: gunicorn -w 4 "app:app" -t 120
+docker build -t parser .
+docker run parser
+web: gunicorn -w 1 "app:app" -t 120
