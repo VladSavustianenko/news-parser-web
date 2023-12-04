@@ -1,1 +1,0 @@
-web: docker build -t parser . & docker run parser & gunicorn -w 1 "app:app" -t 120
