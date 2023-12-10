@@ -73,22 +73,16 @@ class Parser:
                 db.session.commit()
                 print('Add topic id:', new_topic.source_id, ' --- ', new_topic.headline.encode("utf-8"))
 
-                content_list = []
                 if 'content_elements' in item and len(item['content_elements']):
-                    order = 1
+                    content_model = ContentModel()
+                    content_model.topic_id = new_topic.id
+                    content_model.content = ''
+
                     for elem in item['content_elements']:
-                        content_model = ContentModel()
                         if 'content' in elem and '_id' in elem:
-                            content_model.topic_id = new_topic.id
-                            content_model.source_id = elem['_id']
-                            content_model.content = elem['content']
-                            content_model.order = order
+                            content_model.content += elem['content']
 
-                            content_list.append(content_model)
-
-                            order += 1
-                    entities = [Content(content) for content in content_list]
-                    db.session.add_all(entities)
+                    db.session.add(Content(content_model))
                     db.session.commit()
 
                 new_topic_log = TopicLog(new_topic.id)
