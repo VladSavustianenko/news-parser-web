@@ -43,15 +43,11 @@ class Content(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     topic_id = db.Column(db.Integer, db.ForeignKey('Topic.id'), nullable=False)
-    source_id = db.Column(db.String)
     content = db.Column(db.String)
-    order = db.Column(db.Integer)
 
     def __init__(self, content_model: ContentModel):
         self.topic_id = content_model.topic_id
-        self.source_id = content_model.source_id
         self.content = content_model.content
-        self.order = content_model.order
 
 
 class TopicLog(db.Model):

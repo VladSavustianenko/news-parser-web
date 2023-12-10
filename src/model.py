@@ -17,9 +17,7 @@ class TopicModel:
 
 class ContentModel:
     topic_id = None
-    source_id = None
     content = None
-    order = None
 
 
 TOPICS = [
