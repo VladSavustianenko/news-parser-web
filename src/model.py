@@ -3,7 +3,6 @@ WP_URL = 'https://www.washingtonpost.com/'
 
 class TopicModel:
     source_id = None
-    type = None
     author = None
     headline = None
     website_url = None
@@ -295,7 +294,7 @@ TOPICS = [
     {
         'title': 'abortion',
         'children': None,
-        'query': '/topic-tags-two-or,77450,77206/',
+        'query': '/tt-or-two-or-utility-tag-with-transparency-labels,77206,77450,abortion,News,Analysis,Perspective,Advice,$8,$9/',
     },
     {
         'title': 'entertainment',

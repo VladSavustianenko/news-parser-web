@@ -13,7 +13,6 @@ class Topic(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     source_id = db.Column(db.String, unique=True, nullable=False)
-    type = db.Column(db.String)
     author = db.Column(db.String)
     headline = db.Column(db.String)
     website_url = db.Column(db.String)
@@ -26,7 +25,6 @@ class Topic(db.Model):
 
     def __init__(self, topicModel: TopicModel):
         self.source_id = topicModel.source_id
-        self.type = topicModel.type
         self.author = topicModel.author
         self.headline = topicModel.headline
         self.website_url = topicModel.website_url
